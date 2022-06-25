@@ -2,17 +2,23 @@ import { emailPattern, passwordPattern } from "./patterns";
 
 const required = (value) => (value ? undefined : "Required");
 
-const validateName = (value) =>
+const validateName = (value = "") =>
   value.length >= 2 ? undefined : "Name is too short";
 
-const validateEmail = (value) =>
-  emailPattern.test(value) ? undefined : "Email is invalid";
+const validateEmail = (value = "") => {
+  if (!value.length) {
+    return undefined;
+  }
+  return emailPattern.test(value) ? undefined : "Email is invalid";
+};
 
-const validatePassword = (value) =>
-  passwordPattern.test(value) ? undefined : "Password is too simple";
+const validatePassword = (value) => {
+  return passwordPattern.test(value) ? undefined : "Password is too simple";
+};
 
-const validatePasswordConfirm = (value, allValues) =>
-  value === allValues.password ? undefined : "Passwords dont match";
+const validatePasswordConfirm = (value, allValues) => {
+  return value === allValues.password ? undefined : "Passwords dont match";
+};
 
 const composeValidators =
   (...validators) =>

@@ -27,11 +27,17 @@ export const Button = styled.button`
   color: #ffffff;
   background-color: #2196f3;
   cursor: pointer;
+  pointer-events: all;
   padding: 10px 15px;
   border: 1px solid transparent;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   &:not(:last-child) {
     margin-right: 10px;
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
   }
 `;

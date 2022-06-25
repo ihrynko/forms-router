@@ -22,8 +22,8 @@ class FinalForm extends Component {
         <h1>Final Form</h1>
         <Form
           onSubmit={this.onSubmit}
-          render={({ handleSubmit, form, submitting }) => (
-            <form onSubmit={handleSubmit} onReset={form.reset}>
+          render={({ handleSubmit, form, submitting, pristine }) => (
+            <form onSubmit={handleSubmit}>
               <Group>
                 {Object.entries(fields).map(([fieldName, fieldState]) => {
                   const {
@@ -49,7 +49,7 @@ class FinalForm extends Component {
               </Group>
               <ButtonsContainer>
                 <Button onClick={form.reset}>Reset</Button>
-                <Button disabled={submitting} type="submit">
+                <Button disabled={submitting || pristine} type="submit">
                   Submit
                 </Button>
               </ButtonsContainer>
