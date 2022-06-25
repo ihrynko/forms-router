@@ -31,7 +31,7 @@ const initialValues = {
       name: "passwordConfirm",
       autoComplete: "false",
       placeholder: "Confirm your password..",
-      validator: validation.confirmPassword,
+      validator: validation.passwordConfirm,
     },
   },
 };

@@ -1,34 +1,18 @@
-const required = (value) => {
-  if (!value) {
-    return "Required";
-  }
-};
+import { emailPattern, passwordPattern } from "./patterns";
 
-const validateName = (value) => {
-  if (!value.length >= 2) {
-    return "Name is too short";
-  }
-};
+const required = (value) => (value ? undefined : "Required");
 
-const validateEmail = (value) => {
-  if (!value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
-    return "Email is invalid";
-  }
-};
+const validateName = (value) =>
+  value.length >= 2 ? undefined : "Name is too short";
 
-const validatePassword = (value) => {
-  if (
-    !value.match(/(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g)
-  ) {
-    return "Password is too simple";
-  }
-};
+const validateEmail = (value) =>
+  emailPattern.test(value) ? undefined : "Email is invalid";
 
-const validatePasswordConfirm = (value, allValues) => {
-  if (value !== allValues.password) {
-    return "Passwords dont match";
-  }
-};
+const validatePassword = (value) =>
+  passwordPattern.test(value) ? undefined : "Password is too simple";
+
+const validatePasswordConfirm = (value, allValues) =>
+  value === allValues.password ? undefined : "Passwords dont match";
 
 const composeValidators =
   (...validators) =>
@@ -42,5 +26,5 @@ export const validation = {
   name: composeValidators(required, validateName),
   email: validateEmail,
   password: composeValidators(required, validatePassword),
-  confirmPassword: composeValidators(required, validatePasswordConfirm),
+  passwordConfirm: composeValidators(required, validatePasswordConfirm),
 };
