@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Field } from "react-final-form";
+import { Form } from "react-final-form";
 import initialValues from "./constants";
 // export { combiValidators } from "./validation";
 import Input from "./Input";
@@ -15,7 +15,7 @@ class FinalForm extends Component {
     return (
       <Form
         onSubmit={this.onSubmit}
-        render={({ handleSubmit, reset, submitting }) => (
+        render={({ handleSubmit, reset, submitting, pristine }) => (
           <form className="form" onSubmit={handleSubmit} onReset={reset}>
             {Object.entries(fields).map(([fieldName, fieldState]) => {
               const {
@@ -44,7 +44,7 @@ class FinalForm extends Component {
             </button>
             <button
               className="button submit"
-              disabled={submitting}
+              disabled={submitting || pristine}
               type="submit"
             >
               Submit

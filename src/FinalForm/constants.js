@@ -1,4 +1,4 @@
-import { validation } from "./validation";
+import { validation } from "./utils";
 
 const initialValues = {
   fields: {
@@ -6,7 +6,6 @@ const initialValues = {
       title: "Name",
       type: "name",
       name: "name",
-      value: "",
       placeholder: "Input your name..",
       validator: validation.name,
     },
@@ -15,7 +14,6 @@ const initialValues = {
       title: "Email",
       type: "email",
       name: "email",
-      value: "",
       placeholder: "Input your email..",
       validator: validation.email,
     },
@@ -24,7 +22,6 @@ const initialValues = {
       type: "password",
       name: "password",
       autoComplete: "false",
-      value: "",
       placeholder: "Input your password..",
       validator: validation.password,
     },
@@ -33,7 +30,6 @@ const initialValues = {
       type: "password",
       name: "passwordConfirm",
       autoComplete: "false",
-      value: "",
       placeholder: "Confirm your password..",
       validator: validation.confirmPassword,
     },

@@ -13,7 +13,8 @@ const Input = ({ title, name, type, autoComplete, placeholder, validator }) => {
             placeholder={placeholder}
             autoComplete={autoComplete}
             name={name}
-            {...input}
+            value={input.value}
+            onChange={input.onChange}
           />
           {error && touched && <span className="error">{error}</span>}
         </div>
