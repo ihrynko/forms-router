@@ -9,11 +9,11 @@ const validateEmail = (value = "") => {
   if (!value.length) {
     return undefined;
   }
-  return emailPattern.test(value) ? undefined : "Email is invalid";
+  return value.match(emailPattern) ? undefined : "Email is invalid";
 };
 
 const validatePassword = (value) => {
-  return passwordPattern.test(value) ? undefined : "Password is too simple";
+  return value.match(passwordPattern) ? undefined : "Password is too simple";
 };
 
 const validatePasswordConfirm = (value, allValues) => {

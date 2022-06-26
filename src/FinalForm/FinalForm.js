@@ -22,7 +22,7 @@ class FinalForm extends Component {
         <h1>Final Form</h1>
         <Form
           onSubmit={this.onSubmit}
-          render={({ handleSubmit, form, submitting, pristine }) => (
+          render={({ handleSubmit, form, submitting, pristine, errors }) => (
             <form onSubmit={handleSubmit}>
               <Group>
                 {Object.entries(fields).map(([fieldName, fieldState]) => {

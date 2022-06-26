@@ -23,7 +23,8 @@ const InputField = ({
             value={input.value}
             onChange={input.onChange}
           />
-          {error && touched && <Error>{error}</Error>}
+
+          {touched && error && <Error>{error}</Error>}
         </div>
       )}
     </Field>
