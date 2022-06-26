@@ -25,7 +25,7 @@ export const Button = styled.button`
   line-height: 1.5;
   letter-spacing: 0.06em;
   color: #ffffff;
-  background-color: #2196f3;
+  background-color: #3f51b5;
   cursor: pointer;
   pointer-events: all;
   padding: 10px 15px;

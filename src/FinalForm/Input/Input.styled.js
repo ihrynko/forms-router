@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 
 export const Label = styled.label`
   margin-top: 15px;
-  color: #2196f3;
-  font-size: 12px;
+  color: #3f51b5;
+  font-size: 15px;
   line-height: 1.17;
   letter-spacing: 0.01em;
   text-align: start;
@@ -16,7 +16,7 @@ export const Input = styled.input`
   border-radius: 4px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:focus {
-    border-color: #2196f3;
+    border-color: #3f51b5;
     outline: none;
   }
 `;
