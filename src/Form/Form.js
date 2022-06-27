@@ -1,9 +1,9 @@
 import { Component } from "react";
 import {
-  FormWrappper,
-  ButtonsContainer,
-  ButtonReset,
-  ButtonSubmit,
+  StyledFormWrappper,
+  StyledButtonsContainer,
+  StyledButtonReset,
+  StyledButtonSubmit,
 } from "./Form.styled.js";
 import Field from "./Input";
 import initialState from "./state";
@@ -104,7 +104,10 @@ class Form extends Component {
   render() {
     const { fields } = this.state;
     return (
-      <FormWrappper onSubmit={this.handleSubmit} onReset={this.handleReset}>
+      <StyledFormWrappper
+        onSubmit={this.handleSubmit}
+        onReset={this.handleReset}
+      >
         {Object.entries(fields).map(([fieldName, fieldState]) => {
           const { title, name, type, autoComplete, placeholder, error, value } =
             fieldState;
@@ -122,13 +125,16 @@ class Form extends Component {
             />
           );
         })}
-        <ButtonsContainer>
-          <ButtonReset type="reset">Reset</ButtonReset>
-          <ButtonSubmit disabled={this.handleSubmitButton()} type="submit">
+        <StyledButtonsContainer>
+          <StyledButtonReset type="reset">Reset</StyledButtonReset>
+          <StyledButtonSubmit
+            disabled={this.handleSubmitButton()}
+            type="submit"
+          >
             Submit
-          </ButtonSubmit>
-        </ButtonsContainer>
-      </FormWrappper>
+          </StyledButtonSubmit>
+        </StyledButtonsContainer>
+      </StyledFormWrappper>
     );
   }
 }

@@ -1,31 +1,30 @@
 import React, { Component } from "react";
 import { Form } from "react-final-form";
+import { toast } from "react-toastify";
 import initialValues from "./constants";
-import InputField from "./Input";
+import Input from "./Input";
 import {
-  FormWrapper,
-  Group,
-  ButtonsContainer,
-  Button,
+  StyledFormWrapper,
+  StyledGroup,
+  StyledButtonsContainer,
+  StyledButton,
 } from "./FinalForm.styled";
 
 class FinalForm extends Component {
-  onSubmit = (values) => {
-    console.log(values);
-  };
+  onSubmit = () => toast("Submitted!");
 
   render() {
     const { fields } = initialValues;
 
     return (
-      <FormWrapper>
+      <StyledFormWrapper>
         <h1>Final Form</h1>
         <Form
           onSubmit={this.onSubmit}
-          render={({ handleSubmit, form, submitting, pristine, errors }) => (
-            <form onSubmit={handleSubmit}>
-              <Group>
-                {Object.entries(fields).map(([fieldName, fieldState]) => {
+          render={({ handleSubmit, form, submitting, pristine }) => (
+            <form onSubmit={handleSubmit} onReset={form.reset}>
+              <StyledGroup>
+                {Object.entries(fields).map(([fieldName, fieldValue]) => {
                   const {
                     title,
                     name,
@@ -33,9 +32,9 @@ class FinalForm extends Component {
                     autoComplete,
                     placeholder,
                     validator,
-                  } = fieldState;
+                  } = fieldValue;
                   return (
-                    <InputField
+                    <Input
                       key={fieldName}
                       title={title}
                       autoComplete={autoComplete}
@@ -46,17 +45,17 @@ class FinalForm extends Component {
                     />
                   );
                 })}
-              </Group>
-              <ButtonsContainer>
-                <Button onClick={form.reset}>Reset</Button>
-                <Button disabled={submitting || pristine} type="submit">
+              </StyledGroup>
+              <StyledButtonsContainer>
+                <StyledButton type="reset">Reset</StyledButton>
+                <StyledButton disabled={submitting || pristine} type="submit">
                   Submit
-                </Button>
-              </ButtonsContainer>
+                </StyledButton>
+              </StyledButtonsContainer>
             </form>
           )}
         />
-      </FormWrapper>
+      </StyledFormWrapper>
     );
   }
 }

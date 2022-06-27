@@ -1,15 +1,15 @@
 import styled from "@emotion/styled";
 
-export const FormWrappper = styled.form`
+export const StyledFormWrappper = styled.form`
   width: 290px;
   margin: 0 auto;
   padding-bottom: 30px;
   padding-top: 30px;
 `;
-export const ButtonsContainer = styled.div`
+export const StyledButtonsContainer = styled.div`
   display: flex;
 `;
-export const ButtonReset = styled.button`
+export const StyledButtonReset = styled.button`
   margin-right: 10px;
   padding: 10px;
   min-width: 120px;
@@ -35,7 +35,7 @@ export const ButtonReset = styled.button`
       0px 2px 2px rgba(0, 0, 0, 0.12);
   }
 `;
-export const ButtonSubmit = styled.button`
+export const StyledButtonSubmit = styled.button`
   margin-right: 10px;
   padding: 10px;
   min-width: 120px;

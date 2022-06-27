@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const FormWrapper = styled.div`
+export const StyledFormWrapper = styled.div`
   max-width: 300px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1);
@@ -9,18 +9,18 @@ export const FormWrapper = styled.div`
   padding: 40px;
 `;
 
-export const Group = styled.div`
+export const StyledGroup = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-export const ButtonsContainer = styled.div`
+export const StyledButtonsContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-top: 15px;
 `;
 
-export const Button = styled.button`
+export const StyledButton = styled.button`
   font-size: 12px;
   line-height: 1.5;
   letter-spacing: 0.06em;

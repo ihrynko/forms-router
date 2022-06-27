@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const Label = styled.label`
+export const StyledLabel = styled.label`
   margin-top: 15px;
   color: #3f51b5;
   font-size: 15px;
@@ -8,7 +8,7 @@ export const Label = styled.label`
   letter-spacing: 0.01em;
   text-align: start;
 `;
-export const Input = styled.input`
+export const StyledInput = styled.input`
   margin-top: 4px;
   height: 40px;
   width: 100%;
@@ -21,7 +21,7 @@ export const Input = styled.input`
   }
 `;
 
-export const Error = styled.span`
+export const StyledError = styled.span`
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;

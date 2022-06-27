@@ -1,21 +1,14 @@
 import React from "react";
 import { Field } from "react-final-form";
-import { Label, Input, Error } from "./Input.styled";
+import { StyledLabel, StyledInput, StyledError } from "./Input.styled";
 
-const InputField = ({
-  title,
-  name,
-  type,
-  autoComplete,
-  placeholder,
-  validator,
-}) => {
+const Input = ({ title, name, type, autoComplete, placeholder, validator }) => {
   return (
     <Field name={name} validate={validator}>
       {({ input, meta: { touched, error } }) => (
         <div>
-          <Label htmlFor={name}>{title}</Label>
-          <Input
+          <StyledLabel htmlFor={name}>{title}</StyledLabel>
+          <StyledInput
             type={type}
             placeholder={placeholder}
             autoComplete={autoComplete}
@@ -24,11 +17,11 @@ const InputField = ({
             onChange={input.onChange}
           />
 
-          {touched && error && <Error>{error}</Error>}
+          {touched && error && <StyledError>{error}</StyledError>}
         </div>
       )}
     </Field>
   );
 };
 
-export default InputField;
+export default Input;

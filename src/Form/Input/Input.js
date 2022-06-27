@@ -1,5 +1,10 @@
 import React from "react";
-import { Group, Label, Input, Error } from "./Input.styled.js";
+import {
+  StyledGroup,
+  StyledLabel,
+  StyledInput,
+  StyledError,
+} from "./Input.styled.js";
 
 const Field = ({
   type,
@@ -12,9 +17,9 @@ const Field = ({
   title,
 }) => {
   return (
-    <Group>
-      <Label> {title} </Label>
-      <Input
+    <StyledGroup>
+      <StyledLabel> {title} </StyledLabel>
+      <StyledInput
         type={type}
         placeholder={placeholder}
         autoComplete={autoComplete}
@@ -22,8 +27,8 @@ const Field = ({
         value={value}
         onChange={onChange}
       />
-      <Error>{error.length > 0 && error}</Error>
-    </Group>
+      <StyledError>{error.length > 0 && error}</StyledError>
+    </StyledGroup>
   );
 };
 

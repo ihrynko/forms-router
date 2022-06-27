@@ -1,15 +1,15 @@
 import styled from "@emotion/styled";
 
-export const Group = styled.div`
+export const StyledGroup = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 `;
-export const Label = styled.label`
+export const StyledLabel = styled.label`
   text-align: start;
   font-size: 18px;
 `;
-export const Input = styled.input`
+export const StyledInput = styled.input`
   margin: 0;
   margin-top: 6px;
   min-width: 300px;
@@ -33,7 +33,7 @@ export const Input = styled.input`
   }
 `;
 
-export const Error = styled.span`
+export const StyledError = styled.span`
   position: relative;
   display: flex;
   top: -8px;

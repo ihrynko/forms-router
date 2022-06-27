@@ -1,16 +1,16 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
-import { Link, Header } from "./Layout.styled";
+import { StyledNavLink, StyledHeader } from "./Layout.styled";
 
 export default function Layout() {
   return (
     <>
-      <Header>
+      <StyledHeader>
         <nav>
-          <Link to="final-form">Final Form</Link>
-          <Link to="form">Form</Link>
+          <StyledNavLink to="final-form">Final Form</StyledNavLink>
+          <StyledNavLink to="form">Form</StyledNavLink>
         </nav>
-      </Header>
+      </StyledHeader>
       <div>
         <Suspense fallback={<div>Loading...</div>}>
           <Outlet />
